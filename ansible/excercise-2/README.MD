@@ -34,8 +34,10 @@ set up your Playbook as follow:
   - name: print out var_three
     debug:
        msg: "{{var_three}}"
-´´´
+````
+
 Save the playbook and head over to code-server terminal and run:
+
 ```
 ansible-playbook -i "localhost," -c local first_playbook.yaml 
 ```
