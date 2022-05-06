@@ -1,0 +1,9 @@
+---
+- name: variable playbook test
+  hosts: localhost
+  vars_files:
+     - custom_array.yml
+  tasks:
+  - name: Debug name
+    debug:
+       msg: "{{ users['jvornhuelz']['home_dir']  }}" 

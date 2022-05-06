@@ -1,0 +1,8 @@
+---
+- name: variable playbook test
+  hosts: all
+  gather_facts: yes
+  tasks:
+  - name: Gather Linux Distibution
+    debug:
+       msg: This is a  {{ ansible_distribution }} {{ ansible_distribution_major_version }}

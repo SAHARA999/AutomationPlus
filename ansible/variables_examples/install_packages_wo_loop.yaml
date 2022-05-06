@@ -1,0 +1,19 @@
+---
+- name: install basic packages
+  hosts: all
+  become: yes
+  tasks:
+   - name: install package vim
+     yum:
+        name: vim
+        state: latest
+   - name: install basic tmux
+     yum:
+        name: tmux
+        state: latest
+   - name: install package httpd
+     yum:
+        name: httpd
+        state: latest
+
+

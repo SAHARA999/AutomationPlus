@@ -1,0 +1,15 @@
+[centos]
+app_server-1
+app_server-2
+app_server-3
+app_server-4
+app_server-5
+app_server-6
+
+[ubuntu]
+app_server-7
+app_server-8
+
+[linux:children]
+centos
+ubuntu

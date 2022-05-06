@@ -1,0 +1,10 @@
+---
+- name: conditional vars
+  hosts: localhost
+  vars:
+     my_mood: happy
+  tasks:
+  - name: Are you happy
+    debug:
+       msg: "I'm {{ my_mood }}"
+    when: my_mood != "happy" 

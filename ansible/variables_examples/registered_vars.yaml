@@ -1,0 +1,12 @@
+---
+- name: install httpd service
+  hosts: all
+  become: yes
+  tasks:
+   - name: install httpd package
+     yum:
+        name: httpd
+        state: latest
+     register: httpd_result
+     when: ansible_distribution == "CentOS"
+   - debug: var=httpd_result

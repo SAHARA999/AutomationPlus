@@ -1,0 +1,2 @@
+ansible_user: ubuntu
+http_port: 7000

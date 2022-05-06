@@ -1,0 +1,9 @@
+users:
+   seidner:
+      first_name: Sebastian
+      last_name: Eidner
+      home_dir: /users/seidner
+   jvornhuelz:
+      first_name: Jan
+      last_name: Vornhuelz
+      home_dir: /users/jvornhuelz

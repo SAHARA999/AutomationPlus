@@ -1,0 +1,21 @@
+---
+- name: install httpd service
+  hosts: all
+  become: yes
+  tasks:
+   - name: install httpd package
+     yum:
+        name: httpd
+        state: latest
+     notify: restart_httpd
+   - name: Standardized index.html file
+     copy:
+        content: "This is Sebastian index.html file for {{ ansible_host }}"
+        dest: /var/www/html/index.html
+     notify: restart_httpd
+  handlers:
+   - name: restart_httpd
+     service:
+        name: httpd
+        state: restarted
+

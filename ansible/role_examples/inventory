@@ -1,0 +1,18 @@
+[centos]
+centos_dev ansible_host=app_server-1
+centos_test ansible_host=app_server-2
+centos_prod_3 ansible_host=app_server-3
+centos_prod_4 ansible_host=app_server-4
+centos_prod_5 ansible_host=app_server-5
+centos_prod_6 ansible_host=app_server-6
+
+[ubuntu]
+ubuntu_test ansible_host=app_server-7
+ubuntu_prod ansible_host=app_server-8
+
+[linux:children]
+centos
+ubuntu
+
+[all:vars]
+ansible_ssh_private_key_file=~/.ssh/keypair_ansible.pem

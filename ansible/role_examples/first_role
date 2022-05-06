@@ -1,0 +1,9 @@
+---
+- name: Using a template
+  hosts: centos
+  become: true
+  vars:
+    http_port: 8080
+  roles:
+    - httpd
+

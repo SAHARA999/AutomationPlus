@@ -1,0 +1,16 @@
+---
+- name: install httpd service
+  hosts: all
+  become: yes
+  tasks:
+   - name: install httpd package
+     yum:
+        name: httpd
+        state: latest
+     notify: restart_httpd
+  handlers:
+   - name: restart_httpd
+     service:
+        name: httpd
+        state: restart
+

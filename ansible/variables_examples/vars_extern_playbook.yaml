@@ -1,0 +1,9 @@
+---
+- name: variable playbook test
+  hosts: localhost
+  vars_files:
+     - custom.yaml
+  tasks:
+  - name: the text is  {{ var_three }}
+    debug:
+       msg: "{{ var_three }}"
