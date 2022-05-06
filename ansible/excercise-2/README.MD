@@ -19,7 +19,7 @@ touch first_playbook.yml
 ```
 Afterwards you can start editing your playbook
 ```
-vi apache.yml
+vi first_playbook.yml
 ```
 set up your Playbook as follow:
 ```
