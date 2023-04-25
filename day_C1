@@ -1,0 +1,40 @@
+---
+- name: Playbook to ping target list
+  hosts: web
+  become: true
+  vars:
+    DNS_Server: [8.8.8.8,1.1.1.1,208.67.222.222,9.9.9.9]
+  
+  tasks:
+
+  - name: ping itmes in list
+    ansible.builtin.shell: ping -c 1 {{ item }}
+    args:
+      executable: /bin/bash
+    with_items: "{{ DNS_Server }}"
+    register: ping_result
+
+  - name: Print return information from the previous task
+    ansible.builtin.debug: 
+      msg: " {{ item.stdout_lines[-1].split('/')[-2] | map('float') | list | first}}"
+    loop: "{{ ping_result.results }}"
+    register: delt
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+
+      
+
+  
+
+
+    

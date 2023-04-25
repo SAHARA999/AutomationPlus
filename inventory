@@ -1,0 +1,12 @@
+[web]
+james ansible_host=192.168.244.1 ansible_password=admin ansible_user=admin ansible_become_user=root ansible_become_password=admin
+[web:vars]
+worst_drink=O-saft
+mood=happy
+name=james
+city=NY
+[database]
+jimmy ansible_host=192.168.244.2 ansible_password=admin ansible_user=admin ansible_become_user=root ansible_become_password=admin
+[database:vars]
+worst_drink=water
+mood=unhappy
